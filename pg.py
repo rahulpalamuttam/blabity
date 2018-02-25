@@ -196,7 +196,7 @@ class PG(object):
                                 scope)
       log_std = tf.get_variable("log_std", shape=(self.action_dim,), dtype=tf.float32)
       action_std = tf.exp(log_std)
-      self.sampled_action = tf.random_normal((self.action_dim,), action_means, action_std)
+      self.sampled_action = tf.random_normal((tf.shape(action_means)[0], self.action_dim,), action_means, action_std)
       mvn = tf.contrib.distributions.MultivariateNormalDiag(action_means, action_std)
       self.logprob = mvn.log_prob(self.action_placeholder)
     #######################################################
@@ -453,10 +453,10 @@ class PG(object):
       #######################################################
       #########   YOUR CODE HERE - 5-10 lines.   ############
       gamma = config.gamma
-      last_reward = pow(gamma, len(rewards) - 1) * rewards[-1]
+      last_reward = rewards[-1]
       path_returns = [last_reward]
       for i in range(len(rewards) - 2, -1, -1):
-        path_returns.insert(0, pow(gamma, i) * rewards[i] + path_returns[0])
+        path_returns.insert(0, rewards[i] + gamma*path_returns[0])
       #######################################################
       #########          END YOUR CODE.          ############
       all_returns.append(np.array(path_returns))
@@ -493,7 +493,9 @@ class PG(object):
     #########   YOUR CODE HERE - 5-10 lines.   ############
     if self.config.use_baseline:
       print "baselining"
-      baseline = self.sess.run(self.baseline, {self.observation_placeholder:observations})
+      baseline = self.sess.run(self.baseline, {self.observation_placeholder:observations,
+                                               self.baseline_target_placeholder: returns
+      })
       adv = returns - baseline
     if self.config.normalize_advantage:
       print "norming"
