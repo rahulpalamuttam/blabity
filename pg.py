@@ -182,7 +182,6 @@ class PG(object):
     #######################################################
     #########   YOUR CODE HERE - 5-10 lines.   ############
     if self.discrete:
-      print "discrete"
       action_logits = build_mlp(self.observation_placeholder,
                                 self.action_dim,
                                 scope)
@@ -492,13 +491,11 @@ class PG(object):
     #######################################################
     #########   YOUR CODE HERE - 5-10 lines.   ############
     if self.config.use_baseline:
-      print "baselining"
       baseline = self.sess.run(self.baseline, {self.observation_placeholder:observations,
                                                self.baseline_target_placeholder: returns
       })
       adv = returns - baseline
     if self.config.normalize_advantage:
-      print "norming"
       adv = (adv - np.mean(adv))/np.std(adv)
     adv = adv
     #######################################################
@@ -555,15 +552,7 @@ class PG(object):
       # run training operations
       if self.config.use_baseline:
         self.update_baseline(returns, observations)
-      print self.observation_placeholder.shape
-      print observations.shape
-      print self.action_placeholder.shape
-      print actions.shape
-      print type(actions)
-      print self.advantage_placeholder.shape
-      print advantages.shape
-      print type(advantages)
-      self.sess.run(self.train_op, feed_dict={
+        self.sess.run(self.train_op, feed_dict={
                     self.observation_placeholder : observations, 
                     self.action_placeholder : actions, 
                     self.advantage_placeholder : advantages})
