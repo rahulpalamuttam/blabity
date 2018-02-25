@@ -1,0 +1,59 @@
+2018-02-24 20:02:17,349:INFO: Making new env: InvertedPendulum-v1
+2018-02-24 20:02:17,384:INFO: Starting new video recorder writing to /home/rpalamut/cs234_asgn3/blabity/results/InvertedPendulum-v1_1000_False_True/openaigym.video.0.2764.video000000.mp4
+2018-02-24 20:02:17,385:ERROR: GLFW error: 65544, desc: X11: The DISPLAY environment variable is missing
+2018-02-24 20:02:17,465:INFO: Finished writing results. You can upload them to the scoreboard via gym.upload('/home/rpalamut/cs234_asgn3/blabity/results/InvertedPendulum-v1_1000_False_True')
+2018-02-24 20:02:17,466:ERROR: GLFW error: 65537, desc: The GLFW library is not initialized
+2018-02-24 20:02:17,466:ERROR: GLFW error: 65537, desc: The GLFW library is not initialized
+2018-02-24 20:04:02,424:INFO: Making new env: InvertedPendulum-v1
+2018-02-24 20:04:02,453:INFO: Starting new video recorder writing to /home/rpalamut/cs234_asgn3/blabity/results/InvertedPendulum-v1_1000_False_True/openaigym.video.0.2944.video000000.mp4
+2018-02-24 20:04:02,876:ERROR: GLFW error: 65544, desc: X11: RandR gamma ramp support seems broken
+2018-02-24 20:05:21,164:INFO: Making new env: InvertedPendulum-v1
+2018-02-24 20:05:21,186:INFO: Starting new video recorder writing to /home/rpalamut/cs234_asgn3/blabity/results/InvertedPendulum-v1_1000_False_True/openaigym.video.0.3095.video000000.mp4
+2018-02-24 20:05:21,709:ERROR: GLFW error: 65544, desc: X11: RandR gamma ramp support seems broken
+2018-02-24 20:13:03,238:INFO: Making new env: InvertedPendulum-v1
+2018-02-24 20:13:03,256:INFO: Starting new video recorder writing to /home/rpalamut/cs234_asgn3/blabity/results/InvertedPendulum-v1_1000_False_True/openaigym.video.0.3591.video000000.mp4
+2018-02-24 20:13:03,745:ERROR: GLFW error: 65544, desc: X11: RandR gamma ramp support seems broken
+2018-02-24 20:15:36,137:INFO: Making new env: InvertedPendulum-v1
+2018-02-24 20:15:36,157:INFO: Starting new video recorder writing to /home/rpalamut/cs234_asgn3/blabity/results/InvertedPendulum-v1_1000_False_True/openaigym.video.0.3747.video000000.mp4
+2018-02-24 20:15:36,737:ERROR: GLFW error: 65544, desc: X11: RandR gamma ramp support seems broken
+2018-02-24 20:16:28,487:INFO: Making new env: InvertedPendulum-v1
+2018-02-24 20:16:28,513:INFO: Starting new video recorder writing to /home/rpalamut/cs234_asgn3/blabity/results/InvertedPendulum-v1_1000_False_True/openaigym.video.0.3945.video000000.mp4
+2018-02-24 20:16:28,514:ERROR: GLFW error: 65544, desc: X11: The DISPLAY environment variable is missing
+2018-02-24 20:16:28,588:INFO: Finished writing results. You can upload them to the scoreboard via gym.upload('/home/rpalamut/cs234_asgn3/blabity/results/InvertedPendulum-v1_1000_False_True')
+2018-02-24 20:16:28,588:ERROR: GLFW error: 65537, desc: The GLFW library is not initialized
+2018-02-24 20:16:28,589:ERROR: GLFW error: 65537, desc: The GLFW library is not initialized
+2018-02-24 20:17:32,849:INFO: Making new env: InvertedPendulum-v1
+2018-02-24 20:17:32,874:INFO: Starting new video recorder writing to /home/rpalamut/cs234_asgn3/blabity/results/InvertedPendulum-v1_1000_False_True/openaigym.video.0.4185.video000000.mp4
+2018-02-24 20:17:32,876:ERROR: GLFW error: 65544, desc: X11: Failed to open display :100
+2018-02-24 20:17:32,951:INFO: Finished writing results. You can upload them to the scoreboard via gym.upload('/home/rpalamut/cs234_asgn3/blabity/results/InvertedPendulum-v1_1000_False_True')
+2018-02-24 20:17:32,952:ERROR: GLFW error: 65537, desc: The GLFW library is not initialized
+2018-02-24 20:17:32,952:ERROR: GLFW error: 65537, desc: The GLFW library is not initialized
+2018-02-24 20:18:42,563:INFO: Making new env: InvertedPendulum-v1
+2018-02-24 20:18:42,593:INFO: Starting new video recorder writing to /home/rpalamut/cs234_asgn3/blabity/results/InvertedPendulum-v1_1000_False_True/openaigym.video.0.4404.video000000.mp4
+2018-02-24 20:18:43,113:ERROR: GLFW error: 65544, desc: X11: RandR gamma ramp support seems broken
+2018-02-24 20:46:46,794:INFO: Average reward: 11.35 +/- 0.54
+2018-02-24 20:46:47,850:INFO: Average reward: 15.54 +/- 1.05
+2018-02-24 20:46:49,036:INFO: Average reward: 20.73 +/- 1.48
+2018-02-24 20:46:50,330:INFO: Average reward: 24.48 +/- 2.01
+2018-02-24 20:46:51,177:INFO: Average reward: 24.65 +/- 1.76
+2018-02-24 20:46:52,153:INFO: Average reward: 24.45 +/- 1.60
+2018-02-24 20:46:53,055:INFO: Average reward: 22.73 +/- 1.32
+2018-02-24 20:46:54,012:INFO: Average reward: 23.81 +/- 1.93
+2018-02-24 20:46:55,015:INFO: Average reward: 21.17 +/- 1.07
+2018-02-24 20:46:55,988:INFO: Average reward: 19.13 +/- 1.17
+2018-02-24 20:46:56,867:INFO: Average reward: 17.84 +/- 0.86
+2018-02-24 20:46:57,834:INFO: Average reward: 14.51 +/- 0.42
+2018-02-24 20:46:58,930:INFO: Average reward: 14.14 +/- 0.38
+2018-02-24 20:46:59,835:INFO: Average reward: 13.05 +/- 0.30
+2018-02-24 20:47:00,731:INFO: Average reward: 12.15 +/- 0.18
+2018-02-24 20:47:01,772:INFO: Average reward: 11.55 +/- 0.19
+2018-02-24 20:47:02,912:INFO: Average reward: 11.19 +/- 0.14
+2018-02-24 20:47:04,039:INFO: Average reward: 10.69 +/- 0.13
+2018-02-24 20:47:05,257:INFO: Average reward: 10.60 +/- 0.11
+2018-02-24 20:47:06,478:INFO: Average reward: 10.80 +/- 0.13
+2018-02-24 20:47:07,559:INFO: Average reward: 11.90 +/- 0.17
+2018-02-24 20:47:08,628:INFO: Average reward: 15.86 +/- 0.30
+2018-02-24 20:47:09,583:INFO: Average reward: 35.04 +/- 1.74
+2018-02-24 20:47:10,488:INFO: Average reward: 16.47 +/- 0.20
+2018-02-24 20:47:11,668:INFO: Average reward: 10.61 +/- 0.08
+2018-02-24 20:47:12,803:INFO: Average reward: 8.39 +/- 0.07
