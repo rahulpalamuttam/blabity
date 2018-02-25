@@ -127,8 +127,12 @@ class PG(object):
     if self.discrete:
       self.action_placeholder = tf.placeholder(tf.int32, shape=(None,))# TODO
     else:
-      self.action_placeholder = tf.placeholder(tf.float32, shape=(None, self.action_dim))# TODO
-  
+      if self.action_dim == 1:
+        shape = (None, self.action_dim)
+      else:
+        shape = (None, self.action_dim)
+      self.action_placeholder = tf.placeholder(tf.float32, shape=shape)# TODO
+      
     # Define a placeholder for advantages
     self.advantage_placeholder = tf.placeholder(tf.float32, shape=(None,))# TODO
     #######################################################
@@ -187,16 +191,14 @@ class PG(object):
       self.logprob = -1 * tf.nn.sparse_softmax_cross_entropy_with_logits(labels=labels,
                                                                          logits=action_logits)
     else:
-      action_logits = build_mlp(self.observation_placeholder,
+      action_means = build_mlp(self.observation_placeholder,
                                 self.action_dim,
                                 scope)
-      
-      action_means = tf.reduce_mean(action_logits, 0)
-      log_std = tf.Variable("log_std", shape=(self.action_dim,))
+      log_std = tf.get_variable("log_std", shape=(self.action_dim,), dtype=tf.float32)
       action_std = tf.exp(log_std)
-      self.sampled_action = action_means + tf.random_normal(shape=(self.action_dim,))*action_std
+      self.sampled_action = tf.random_normal((self.action_dim,), action_means, action_std)
       mvn = tf.contrib.distributions.MultivariateNormalDiag(action_means, action_std)
-      self.logprob = mvn.log_prob(action_logits)
+      self.logprob = mvn.log_prob(self.action_placeholder)
     #######################################################
     #########          END YOUR CODE.          ############
             
@@ -219,7 +221,7 @@ class PG(object):
 
     ######################################################
     #########   YOUR CODE HERE - 1-2 lines.   ############
-    self.loss = -1 * tf.reduce_sum(self.logprob * self.advantage_placeholder)# TODO
+    self.loss = -1 * tf.reduce_mean(self.logprob * self.advantage_placeholder)# TODO
     #######################################################
     #########          END YOUR CODE.          ############
   
@@ -496,6 +498,7 @@ class PG(object):
     if self.config.normalize_advantage:
       print "norming"
       adv = (adv - np.mean(adv))/np.std(adv)
+    adv = adv
     #######################################################
     #########          END YOUR CODE.          ############
     return adv
@@ -550,6 +553,14 @@ class PG(object):
       # run training operations
       if self.config.use_baseline:
         self.update_baseline(returns, observations)
+      print self.observation_placeholder.shape
+      print observations.shape
+      print self.action_placeholder.shape
+      print actions.shape
+      print type(actions)
+      print self.advantage_placeholder.shape
+      print advantages.shape
+      print type(advantages)
       self.sess.run(self.train_op, feed_dict={
                     self.observation_placeholder : observations, 
                     self.action_placeholder : actions, 
